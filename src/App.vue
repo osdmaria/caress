@@ -1,13 +1,25 @@
 <template>
-  <div id="app">
-    <router-view/>
-  </div>
+  <v-app>
+    <v-main id="app">
+      <router-view/>
+    </v-main>
+  </v-app>
+ 
 </template>
 
-<style lang="scss">
-#app {
-  font-family: 'Poppins', sans-serif;
-  margin: 0;
-}
+<script>
 
+export default {
+  name: 'App',
+
+  data: () => ({
+    //
+  }),
+};
+</script>
+
+<style scoped>
+#app{
+  font-family: 'Poppins', sans-serif;
+}
 </style>
