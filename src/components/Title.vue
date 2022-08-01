@@ -17,5 +17,8 @@ export default {
 </script>
 
 <style>
-
+h1{
+  font-size: 45px;
+  
+}
 </style>

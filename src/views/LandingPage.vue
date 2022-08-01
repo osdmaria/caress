@@ -39,7 +39,7 @@
       >
         <div class="about-right">
           <Title title="About" class="LightPink--text font-weight-medium" />
-          <p class="pt-4">
+          <p class="pt-4 font-weight-medium">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae
             velit praesentium dolorem at adipisci, doloribus molestias ipsa.
             Numquam maxime architecto officiis, modi expedita voluptate,
@@ -55,11 +55,11 @@
     <div>
       <div class="How">
         <Title title="How?" class="DarkBlue--text" />
-        <p>We bring the solution home to you</p>
-        <div class="d-flex flex-row-reverse justify-space-between align-center">
+        <p class=" pb-8">We bring the solution home to you</p>
+        <v-card class="d-flex flex-row-reverse justify-space-between align-center parents">
           <div class="about-right">
-            <h3 class="LightPink--text font-weight-medium">Parents</h3>
-            <p class="pt-4">
+            <h2 class="LightPink--text font-weight-medium">Parents</h2>
+            <p class="pt-4 font-weight-medium">
               if you’re a parent, you can consult a doctor for your child Lorem
               ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
               tempor incididunt ut labore et dolore magna aliqua. Mauris sit
@@ -73,7 +73,7 @@
               width="400"
             />
           </div>
-        </div>
+        </v-card>
       </div>
       <div class="d-flex justify-space-between cards">
         <div v-for="n in 4" :key="n">
@@ -84,10 +84,10 @@
           />
         </div>
       </div>
-      <div class="d-flex flex-row justify-space-between align-center docs">
+      <v-card class="d-flex flex-row justify-space-between align-center docs">
         <div class="docs-left">
-          <h3 class="LightPink--text font-weight-medium">Doctors</h3>
-          <p class="pt-4">
+          <h2 class="LightPink--text font-weight-medium">Doctors</h2>
+          <p class="pt-4 font-weight-medium">
             if you’re a parent, you can consult a doctor for your child Lorem
             ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
             tempor incididunt ut labore et dolore magna aliqua. Mauris sit amet
@@ -97,7 +97,7 @@
         <div class="docs-right d-flex align-center">
           <img src="../assets/[Downloader 2 (1).png" alt="" width="400" />
         </div>
-      </div>
+      </v-card>
       <div class="d-flex justify-space-between cards wrap">
         <div v-for="n in 3" :key="n">
           <SpecificationCard
@@ -111,8 +111,8 @@
     <div class="quizz">
       <div class="d-flex flex-row-reverse justify-space-between">
         <div class="quiz-right d-flex flex-column align-center justify-center">
-          <h1 class="DarkBlue--text">Take a Quiz</h1>
-          <p class="font-weight-medium">
+          <h1 class="DarkBlue--text pb-3">Take a Quiz</h1>
+          <p class="font-weight-medium pb-3">
             Get to know your child better by taking this quiz, it’ll make you
             realize how different they are from what you expect them to be.
           </p>
@@ -128,8 +128,8 @@
         <img src="../assets/Account-pana 1.png" alt="" width="250"/>
       </div>
       <div class=" d-flex flex-column align-center pl-8 pr-8">
-        <h1>Wanna join?</h1>
-        <p class=" align-content-center font-weight-medium">
+        <h1 class="pb-3">Wanna join?</h1>
+        <p class=" align-content-center font-weight-medium pb-3">
           You can join this program, and submit for a free trial as a parent,
           benefit from the many services and keep a good relationship with your
           child
@@ -240,7 +240,7 @@ h2 {
 .container1,
 .about {
   margin: 0 6em;
-  padding-top: 7em;
+  margin-top: 7em;
 }
 .about-right {
   width: 40%;
@@ -251,14 +251,18 @@ h2 {
 
 .How {
   margin: 0 6em;
-  padding-top: 7em;
+  margin-top: 7em;
 }
 .How img {
   border-radius: 13px;
 }
 .cards {
-  margin: 0 10em;
+  margin: 0 12em;
   padding-top: 4em;
+}
+.parents{
+  padding: 3em;
+  border-radius: 20px !important;
 }
 .docs-left {
   width: 40%;
@@ -268,8 +272,10 @@ h2 {
 }
 .docs {
   justify-content: space-between;
-  padding-top: 7em;
+  margin-top: 5em !important;
   margin: 0 6em;
+  padding: 3em;
+  border-radius: 20px !important;
 }
 .quizz {
   background-image: url("../assets/Group 26 (6).png");
@@ -285,7 +291,7 @@ h2 {
   font-size: 40px;
 }
 .join{
-  margin: 7em 6em 0 6em;
+  margin: 7em 6em 7em 6em;
 } 
 .join p {
   text-align: center;
@@ -309,4 +315,8 @@ textarea, input{
 .footer-left{
   width: 60%;
 }
+p{
+  font-size: 18px;
+}
+
 </style>
