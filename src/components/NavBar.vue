@@ -10,7 +10,7 @@
           <li>About</li>
           <li>I'm a Parent</li>
           <li>Become a Doctor</li>
-          <li>Sign in Now <font-awesome-icon icon="fa-solid fa-arrow-right" class=" ml-3"/></li> 
+          <li><router-link to="/signin"> Sign in Now</router-link> <font-awesome-icon icon="fa-solid fa-arrow-right" class=" ml-3"/></li> 
         </ul>
       </div>
     </div>
@@ -30,6 +30,11 @@ export default {
 }
 ul {
   list-style: none;
+  text-decoration: none;
+}
+a{
+  text-decoration: none;
+  color: black !important;
 }
 .list-container{
   width: 50%;
