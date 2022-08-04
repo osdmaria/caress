@@ -9,15 +9,15 @@ let articleSchema = new mongoose.Schema(
         description:{
             type: String,
             required: false
-        },
-        categories:{
-            type: Array,
-            required: true
-        },
-        content: {
-            type: String,
-            required: true
         }
+        // categories:{
+        //     type: Array,
+        //     required: true
+        // },
+        // content: {
+        //     type: String,
+        //     required: true
+        // }
 });
 
 module.exports = mongoose.model("article", articleSchema);

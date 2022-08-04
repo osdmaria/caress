@@ -12,14 +12,14 @@ module.exports = {
     }
   },
   updateArticle: async (req, res, next) => {
-    const { title, description, _id } = req.body,
+    const { title, description } = req.body,  // + id of the authenticated user!!!!!!! 
       id = req.params.id;
     try {
-      if (!(id.toString() == _id.toString()))
-        return next({
-          message: "You aren't allowed to update other Users article.",
-          status: 401,
-        });
+    //   if (!(id.toString() == _id.toString()))
+    //     return next({
+    //       message: "You aren't allowed to update other Users article.",
+    //       status: 401,
+    //     });
       const article = await Article.findById(id);
       article.title = title ? title : article.title;
       article.description = description ? description : article.description;
