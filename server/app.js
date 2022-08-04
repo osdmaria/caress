@@ -5,6 +5,7 @@ const express= require("express"),
     doctor = require("./models/doctor"),
     doctorRouter = require("./routes/doctor"),
     doctorAuth = require("./routes/auth")
+    articleRouter = require("./routes/article")
 
 app.get("/",(req, res)=>{
     res.send("Hi welcome to our website!");
@@ -15,6 +16,7 @@ app.use(express.json());
 
 app.use("/auth", doctorAuth);
 app.use("/users", doctorRouter);
+app.use("/articles", articleRouter);
 
 mongoose.set("debug", true); // in devolpment process
     mongoose
