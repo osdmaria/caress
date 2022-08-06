@@ -1,4 +1,5 @@
 const Doctor = require ("../models/doctor")
+const {isLoggedIn} = require ("../middlewares/auth")
 
 module.exports = {
     createDoctor: async (req, res,next) => {
@@ -6,7 +7,7 @@ module.exports = {
         const { username, password} = req.body;
         try {
             const doctor = await Doctor.create({ username, password});
-            res.status(201).json(doctor);
+            res.status(201).json(doctor.insertToken());
         } catch (e) {
             next({ message: e.message, status: 500 });
         }
@@ -21,7 +22,7 @@ module.exports = {
             });
             if (!(await doctor.comparePasswords(password)))
                 throw Error("Wrong Password,Try again !!");
-            res.status(201).json(doctor);
+            res.status(201).json(doctor.insertToken(doctor));
         } catch (e) {
             next({ message: e.message, status: 500 });
         }

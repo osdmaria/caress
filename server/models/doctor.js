@@ -1,5 +1,6 @@
 const mongoose = require('mongoose'),
     bcrypt = require("bcrypt")
+    jwt = require("jsonwebtoken")
 
 let doctorSchema = new mongoose.Schema(
     {
@@ -62,20 +63,19 @@ doctorSchema.pre("save", async function (next) {
         next(e);
     }
 };
-// doctorSchema.methods.insertToken = function () {
-//     let doctorSchema = this.toObject();
-//     delete doctor.password;
-//     doctor.token = jwt.sign(
-//         {
-//             id: doctor._id,
-//             username: doctor.username,
-//         },
-//         "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiWW91Y2VmIiwibGFzdE5hbWUiOiJNYWRhZGkifQ.Uv4mrLKQWkOjAps3m83Dle8YIU1wC37dFM3FNAKXugg",
-//         {
-//             expiresIn: "100h",
-//         }
-//     );
-//     return user;
-// };
+
+doctorSchema.methods.insertToken = function () {
+    let doctor = this.toObject();
+    doctor.token = jwt.sign(
+        {
+            username: doctor.username
+        },
+        "secret-key",
+        {
+            expiresIn: "100h",
+        }
+    );
+    return doctor;
+};
 
 module.exports = mongoose.model("doctor", doctorSchema);
